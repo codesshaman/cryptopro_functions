@@ -1,0 +1,1267 @@
+Extension [ <persistent> extension #28 php_CPCSP version 0.1 ] {
+
+  - Constants [185] {
+    Constant [ int MEMORY_STORE ] { 0 }
+    Constant [ int LOCAL_MACHINE_STORE ] { 1 }
+    Constant [ int CURRENT_USER_STORE ] { 2 }
+    Constant [ int ACTIVE_DIRECTORY_USER_STORE ] { 3 }
+    Constant [ int SMART_CARD_USER_STORE ] { 4 }
+    Constant [ int STORE_OPEN_READ_ONLY ] { 0 }
+    Constant [ int STORE_OPEN_READ_WRITE ] { 1 }
+    Constant [ int STORE_OPEN_MAXIMUM_ALLOWED ] { 2 }
+    Constant [ int STORE_OPEN_EXISTING_ONLY ] { 128 }
+    Constant [ int STORE_OPEN_INCLUDE_ARCHIVED ] { 256 }
+    Constant [ int CERTIFICATE_FIND_SHA1_HASH ] { 0 }
+    Constant [ int CERTIFICATE_FIND_SUBJECT_NAME ] { 1 }
+    Constant [ int CERTIFICATE_FIND_ISSUER_NAME ] { 2 }
+    Constant [ int CERTIFICATE_FIND_ROOT_NAME ] { 3 }
+    Constant [ int CERTIFICATE_FIND_TEMPLATE_NAME ] { 4 }
+    Constant [ int CERTIFICATE_FIND_EXTENSION ] { 5 }
+    Constant [ int CERTIFICATE_FIND_EXTENDED_PROPERTY ] { 6 }
+    Constant [ int CERTIFICATE_FIND_APPLICATION_POLICY ] { 7 }
+    Constant [ int CERTIFICATE_FIND_CERTIFICATE_POLICY ] { 8 }
+    Constant [ int CERTIFICATE_FIND_TIME_VALID ] { 9 }
+    Constant [ int CERTIFICATE_FIND_TIME_NOT_YET_VALID ] { 10 }
+    Constant [ int CERTIFICATE_FIND_TIME_EXPIRED ] { 11 }
+    Constant [ int CERTIFICATE_FIND_KEY_USAGE ] { 12 }
+    Constant [ int CERT_INFO_SUBJECT_SIMPLE_NAME ] { 0 }
+    Constant [ int CERT_INFO_ISSUER_SIMPLE_NAME ] { 1 }
+    Constant [ int CERT_INFO_SUBJECT_EMAIL_NAME ] { 2 }
+    Constant [ int CERT_INFO_ISSUER_EMAIL_NAME ] { 3 }
+    Constant [ int CERT_INFO_SUBJECT_UPN ] { 4 }
+    Constant [ int CERT_INFO_ISSUER_UPN ] { 5 }
+    Constant [ int CERT_INFO_SUBJECT_DNS_NAME ] { 6 }
+    Constant [ int CERT_INFO_ISSUER_DNS_NAME ] { 7 }
+    Constant [ int DIGITAL_SIGNATURE_KEY_USAGE ] { 128 }
+    Constant [ int NON_REPUDIATION_KEY_USAGE ] { 64 }
+    Constant [ int KEY_ENCIPHERMENT_KEY_USAGE ] { 32 }
+    Constant [ int DATA_ENCIPHERMENT_KEY_USAGE ] { 16 }
+    Constant [ int KEY_AGREEMENT_KEY_USAGE ] { 8 }
+    Constant [ int KEY_CERT_SIGN_KEY_USAGE ] { 4 }
+    Constant [ int OFFLINE_CRL_SIGN_KEY_USAGE ] { 2 }
+    Constant [ int CRL_SIGN_KEY_USAGE ] { 2 }
+    Constant [ int ENCIPHER_ONLY_KEY_USAGE ] { 1 }
+    Constant [ int DECIPHER_ONLY_KEY_USAGE ] { 32768 }
+    Constant [ int ENCODE_BASE64 ] { 0 }
+    Constant [ int ENCODE_BINARY ] { 1 }
+    Constant [ int ENCODE_ANY ] { 4294967295 }
+    Constant [ int CADESCOM_ENCRYPTION_ALGORITHM_RC2 ] { 0 }
+    Constant [ int CADESCOM_ENCRYPTION_ALGORITHM_RC4 ] { 1 }
+    Constant [ int CADESCOM_ENCRYPTION_ALGORITHM_DES ] { 2 }
+    Constant [ int CADESCOM_ENCRYPTION_ALGORITHM_3DES ] { 3 }
+    Constant [ int CADESCOM_ENCRYPTION_ALGORITHM_AES ] { 4 }
+    Constant [ int CADESCOM_ENCRYPTION_ALGORITHM_GOST_28147_89 ] { 25 }
+    Constant [ int ENCRYPTION_KEY_LENGTH_MAXIMUM ] { 0 }
+    Constant [ int ENCRYPTION_KEY_LENGTH_40_BITS ] { 1 }
+    Constant [ int ENCRYPTION_KEY_LENGTH_56_BITS ] { 2 }
+    Constant [ int ENCRYPTION_KEY_LENGTH_128_BITS ] { 3 }
+    Constant [ int ENCRYPTION_KEY_LENGTH_192_BITS ] { 4 }
+    Constant [ int ENCRYPTION_KEY_LENGTH_256_BITS ] { 5 }
+    Constant [ int EKU_OTHER ] { 0 }
+    Constant [ int EKU_SERVER_AUTH ] { 1 }
+    Constant [ int EKU_CLIENT_AUTH ] { 2 }
+    Constant [ int EKU_CODE_SIGNING ] { 3 }
+    Constant [ int EKU_EMAIL_PROTECTION ] { 4 }
+    Constant [ int EKU_SMARTCARD_LOGON ] { 5 }
+    Constant [ int EKU_ENCRYPTING_FILE_SYSTEM ] { 6 }
+    Constant [ int SEX_NOT_KNOWN ] { 0 }
+    Constant [ int SEX_MALE ] { 1 }
+    Constant [ int SEX_FEMALE ] { 2 }
+    Constant [ int SEX_NOT_APPLICABLE ] { 9 }
+    Constant [ int PROV_RSA_FULL ] { 1 }
+    Constant [ int PROV_RSA_SIG ] { 2 }
+    Constant [ int PROV_DSS ] { 3 }
+    Constant [ int PROV_FORTEZZA ] { 4 }
+    Constant [ int PROV_MS_EXCHANGE ] { 5 }
+    Constant [ int PROV_SSL ] { 6 }
+    Constant [ int PROV_RSA_SCHANNEL ] { 12 }
+    Constant [ int PROV_DSS_DH ] { 13 }
+    Constant [ int PROV_EC_ECDSA_SIG ] { 14 }
+    Constant [ int PROV_EC_ECNRA_SIG ] { 15 }
+    Constant [ int PROV_EC_ECDSA_FULL ] { 16 }
+    Constant [ int PROV_EC_ECNRA_FULL ] { 17 }
+    Constant [ int PROV_DH_SCHANNEL ] { 18 }
+    Constant [ int PROV_SPYRUS_LYNKS ] { 20 }
+    Constant [ int PROV_RNG ] { 21 }
+    Constant [ int PROV_INTEL_SEC ] { 22 }
+    Constant [ int PROV_REPLACE_OWF ] { 23 }
+    Constant [ int PROV_RSA_AES ] { 24 }
+    Constant [ int KEY_SPEC_KEYEXCHANGE ] { 1 }
+    Constant [ int KEY_SPEC_SIGNATURE ] { 2 }
+    Constant [ int OID_OTHER ] { 0 }
+    Constant [ int OID_AUTHORITY_KEY_IDENTIFIER_EXTENSION ] { 1 }
+    Constant [ int OID_KEY_ATTRIBUTES_EXTENSION ] { 2 }
+    Constant [ int OID_CERT_POLICIES_95_EXTENSION ] { 3 }
+    Constant [ int OID_KEY_USAGE_RESTRICTION_EXTENSION ] { 4 }
+    Constant [ int OID_LEGACY_POLICY_MAPPINGS_EXTENSION ] { 5 }
+    Constant [ int OID_SUBJECT_ALT_NAME_EXTENSION ] { 6 }
+    Constant [ int OID_ISSUER_ALT_NAME_EXTENSION ] { 7 }
+    Constant [ int OID_BASIC_CONSTRAINTS_EXTENSION ] { 8 }
+    Constant [ int OID_SUBJECT_KEY_IDENTIFIER_EXTENSION ] { 9 }
+    Constant [ int OID_KEY_USAGE_EXTENSION ] { 10 }
+    Constant [ int OID_PRIVATEKEY_USAGE_PERIOD_EXTENSION ] { 11 }
+    Constant [ int OID_SUBJECT_ALT_NAME2_EXTENSION ] { 12 }
+    Constant [ int OID_ISSUER_ALT_NAME2_EXTENSION ] { 13 }
+    Constant [ int OID_BASIC_CONSTRAINTS2_EXTENSION ] { 14 }
+    Constant [ int OID_NAME_CONSTRAINTS_EXTENSION ] { 15 }
+    Constant [ int OID_CRL_DIST_POINTS_EXTENSION ] { 16 }
+    Constant [ int OID_CERT_POLICIES_EXTENSION ] { 17 }
+    Constant [ int OID_POLICY_MAPPINGS_EXTENSION ] { 18 }
+    Constant [ int OID_AUTHORITY_KEY_IDENTIFIER2_EXTENSION ] { 19 }
+    Constant [ int OID_POLICY_CONSTRAINTS_EXTENSION ] { 20 }
+    Constant [ int OID_ENHANCED_KEY_USAGE_EXTENSION ] { 21 }
+    Constant [ int OID_CERTIFICATE_TEMPLATE_EXTENSION ] { 22 }
+    Constant [ int OID_APPLICATION_CERT_POLICIES_EXTENSION ] { 23 }
+    Constant [ int OID_APPLICATION_POLICY_MAPPINGS_EXTENSION ] { 24 }
+    Constant [ int OID_APPLICATION_POLICY_CONSTRAINTS_EXTENSION ] { 25 }
+    Constant [ int OID_AUTHORITY_INFO_ACCESS_EXTENSION     ] { 26 }
+    Constant [ int OID_SERVER_AUTH_eku ] { 100 }
+    Constant [ int OID_CLIENT_AUTH_eku ] { 101 }
+    Constant [ int OID_CODE_SIGNING_eku ] { 102 }
+    Constant [ int OID_EMAIL_PROTECTION_eku ] { 103 }
+    Constant [ int OID_IPSEC_END_SYSTEM_eku ] { 104 }
+    Constant [ int OID_IPSEC_TUNNEL_eku ] { 105 }
+    Constant [ int OID_IPSEC_USER_eku ] { 106 }
+    Constant [ int OID_TIME_STAMPING_eku ] { 107 }
+    Constant [ int OID_CTL_USAGE_SIGNING_eku ] { 108 }
+    Constant [ int OID_TIME_STAMP_SIGNING_eku ] { 109 }
+    Constant [ int OID_SERVER_GATED_CRYPTO_eku ] { 110 }
+    Constant [ int OID_ENCRYPTING_FILE_SYSTEM_eku ] { 111 }
+    Constant [ int OID_EFS_RECOVERY_eku ] { 112 }
+    Constant [ int OID_WHQL_CRYPTO_eku ] { 113 }
+    Constant [ int OID_NT5_CRYPTO_eku ] { 114 }
+    Constant [ int OID_OEM_WHQL_CRYPTO_eku ] { 115 }
+    Constant [ int OID_EMBEDED_NT_CRYPTO_eku ] { 116 }
+    Constant [ int OID_ROOT_LIST_SIGNER_eku ] { 117 }
+    Constant [ int OID_QUALIFIED_SUBORDINATION_eku ] { 118 }
+    Constant [ int OID_KEY_RECOVERY_eku ] { 119 }
+    Constant [ int OID_DIGITAL_RIGHTS_eku ] { 120 }
+    Constant [ int OID_LICENSES_eku ] { 121 }
+    Constant [ int OID_LICENSE_SERVER_eku ] { 122 }
+    Constant [ int OID_SMART_CARD_LOGON_eku ] { 123 }
+    Constant [ int OID_PKIX_POLICY_QUALIFIER_CPS ] { 124 }
+    Constant [ int OID_PKIX_POLICY_QUALIFIER_USERNOTICE ] { 125 }
+    Constant [ int AUTHENTICATED_ATTRIBUTE_SIGNING_TIME ] { 0 }
+    Constant [ int AUTHENTICATED_ATTRIBUTE_DOCUMENT_NAME ] { 1 }
+    Constant [ int AUTHENTICATED_ATTRIBUTE_DOCUMENT_DESCRIPTION ] { 2 }
+    Constant [ int ATTRIBUTE_OTHER ] { 4294967295 }
+    Constant [ int CHECK_NONE ] { 0 }
+    Constant [ int CHECK_TRUSTED_ROOT ] { 1 }
+    Constant [ int CHECK_TIME_VALIDITY ] { 2 }
+    Constant [ int CHECK_SIGNATURE_VALIDITY ] { 4 }
+    Constant [ int CHECK_ONLINE_REVOCATION_STATUS ] { 8 }
+    Constant [ int CHECK_OFFLINE_REVOCATION_STATUS ] { 16 }
+    Constant [ int CHECK_COMPLETE_CHAIN ] { 32 }
+    Constant [ int CHECK_NAME_CONSTRAINTS ] { 64 }
+    Constant [ int CHECK_BASIC_CONSTRAINTS ] { 128 }
+    Constant [ int CHECK_NESTED_VALIDITY_PERIOD ] { 256 }
+    Constant [ int CHECK_ONLINE_ALL ] { 495 }
+    Constant [ int CHECK_OFFLINE_ALL ] { 503 }
+    Constant [ int STRING_TO_UCS2LE ] { 0 }
+    Constant [ int BASE64_TO_BINARY ] { 1 }
+    Constant [ int CERTIFICATE_INCLUDE_CHAIN_EXCEPT_ROOT ] { 0 }
+    Constant [ int CERTIFICATE_INCLUDE_WHOLE_CHAIN ] { 1 }
+    Constant [ int CERTIFICATE_INCLUDE_END_ENTITY_ONLY ] { 2 }
+    Constant [ int CADES_DEFAULT ] { 0 }
+    Constant [ int CADES_BES ] { 1 }
+    Constant [ int CADES_X_LONG_TYPE_1 ] { 93 }
+    Constant [ int CADES_T ] { 5 }
+    Constant [ int PKCS7_TYPE ] { 65535 }
+    Constant [ int VERIFY_SIGNATURE_ONLY ] { 0 }
+    Constant [ int VERIFY_SIGNATURE_AND_CERTIFICATE ] { 1 }
+    Constant [ int HASH_ALGORITHM_SHA1 ] { 0 }
+    Constant [ int HASH_ALGORITHM_MD2 ] { 1 }
+    Constant [ int HASH_ALGORITHM_MD4 ] { 2 }
+    Constant [ int HASH_ALGORITHM_MD5 ] { 3 }
+    Constant [ int HASH_ALGORITHM_SHA_256 ] { 4 }
+    Constant [ int HASH_ALGORITHM_SHA_384 ] { 5 }
+    Constant [ int HASH_ALGORITHM_SHA_512 ] { 6 }
+    Constant [ int HASH_ALGORITHM_GOSTR_3411 ] { 100 }
+    Constant [ int CADESCOM_HASH_ALGORITHM_CP_GOST_3411 ] { 100 }
+    Constant [ int CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_256 ] { 101 }
+    Constant [ int CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_512 ] { 102 }
+    Constant [ int CADESCOM_HASH_ALGORITHM_CP_GOST_3411_HMAC ] { 110 }
+    Constant [ int CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_256_HMAC ] { 111 }
+    Constant [ int CADESCOM_HASH_ALGORITHM_CP_GOST_3411_2012_512_HMAC ] { 112 }
+    Constant [ int XML_SIGNATURE_TYPE_ENVELOPED ] { 0 }
+    Constant [ int XML_SIGNATURE_TYPE_ENVELOPING ] { 1 }
+    Constant [ int XML_SIGNATURE_TYPE_TEMPLATE ] { 2 }
+  }
+
+  - Classes [27] {
+    Class [ <internal:php_CPCSP> class About ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [7] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_MajorVersion ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_MinorVersion ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_BuildVersion ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Version ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method CSPVersion ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method PluginVersion ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class Version ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [5] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_MajorVersion ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_MinorVersion ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_BuildVersion ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method toString ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPStore ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [6] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Open ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Close ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Certificates ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Location ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Name ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPCertificates ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [4] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Find ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Item ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Count ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPCertificate ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [19] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method GetInfo ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method FindPrivateKey ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method HasPrivateKey ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method IsValid ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method ExtendedKeyUsage ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method KeyUsage ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Export ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Import ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_SerialNumber ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Thumbprint ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_SubjectName ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IssuerName ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Version ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_ValidToDate ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_ValidFromDate ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method BasicConstraints ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method PublicKey ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method PrivateKey ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPKeyUsage ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [12] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsPresent ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsCritical ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsDigitalSignatureEnabled ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsNonRepudiationEnabled ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsKeyEnciphermentEnabled ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsDataEnciphermentEnabled ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsKeyAgreementEnabled ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsKeyCertSignEnabled ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsCRLSignEnabled ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsEncipherOnlyEnabled ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsDecipherOnlyEnabled ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPExtendedKeyUsage ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [4] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsPresent ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsCritical ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_EKUs ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPEKU ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [5] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Name ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Name ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_OID ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_OID ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPAlgorithm ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [5] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Name ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Name ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_KeyLength ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_KeyLength ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPPrivateKey ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [6] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_ContainerName ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_UniqueContainerName ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_ProviderName ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_ProviderType ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_KeySpec ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPEncodedData ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [3] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Format ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Value ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPPublicKey ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [5] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Algorithm ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Length ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_EncodedKey ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_EncodedParameters ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPOID ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [4] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Value ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Value ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_FriendlyName ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPAttribute ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [9] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_OID ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_OID ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Value ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Value ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Name ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Name ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_ValueEncoding ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_ValueEncoding ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPBasicConstraints ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [8] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_IsPresent ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsPresent ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_IsCritical ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsCritical ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsCertificateAuthority ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IsPathLenConstraintPresent ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_PathLenConstraint ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPCertificateStatus ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [12] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Result ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_CheckFlag ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_CheckFlag ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method EKU ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_VerificationTime ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_VerificationTime ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_UrlRetrievalTimeout ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_UrlRetrievalTimeout ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method CertificatePolicies ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method ApplicationPolicies ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_ValidationCertificates ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPEnvelopedData ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [8] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Content ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Content ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_ContentEncoding ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_ContentEncoding ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Encrypt ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Decrypt ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Recipients ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPSigner ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [14] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Certificate ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Certificate ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Options ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Options ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_AuthenticatedAttributes ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_UnauthenticatedAttributes ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_TSAAddress ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_TSAAddress ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_CRLs ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_OCSPResponses ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_SigningTime ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_SignatureTimeStampTime ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_KeyPin ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPEKUs ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [6] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Add ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Count ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Item ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Clear ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Remove ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPAttributes ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [7] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Add ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Count ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Item ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Clear ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Remove ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Assign ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPSigners ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [2] {
+        Method [ <internal:php_CPCSP> public method get_Count ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Item ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPRecipients ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [4] {
+        Method [ <internal:php_CPCSP> public method Add ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Count ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Item ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Clear ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPSignedData ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [17] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method SignCades ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method SignHash ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Sign ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method CoSign ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method CoSignCades ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method CoSignHash ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method EnhanceCades ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method VerifyCades ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method VerifyHash ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Verify ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_ContentEncoding ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_ContentEncoding ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Content ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Content ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Signers ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Certificates ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPHashedData ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [10] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Hash ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method SetHashValue ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Value ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Key ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Key ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Algorithm ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Algorithm ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_DataEncoding ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_DataEncoding ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPRawSignature ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [3] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method VerifyHash ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method SignHash ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class CPSignedXML ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [9] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_Content ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Content ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_SignatureType ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_DigestMethod ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_SignatureMethod ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_Signers ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Sign ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Verify ] {
+        }
+      }
+    }
+
+    Class [ <internal:php_CPCSP> class SymmetricAlgorithm ] {
+
+      - Constants [0] {
+      }
+
+      - Static properties [0] {
+      }
+
+      - Static methods [0] {
+      }
+
+      - Properties [0] {
+      }
+
+      - Methods [11] {
+        Method [ <internal:php_CPCSP, ctor> public method __construct ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_DiversData ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_DiversData ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method get_IV ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method set_IV ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Encrypt ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method Decrypt ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method GenerateKey ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method DiversifyKey ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method ImportKey ] {
+        }
+
+        Method [ <internal:php_CPCSP> public method ExportKey ] {
+        }
+      }
+    }
+  }
+}
+
